@@ -21,3 +21,8 @@ export const prisma =
 if (process.env.NODE_ENV !== "production") {
   globalForPrisma.prisma = prisma
 }
+/* 
+git add *
+git commit -m 'chore: release version 0.1.1'
+git push origin main
+*/
