@@ -75,10 +75,11 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)
   const cpf = searchParams.get('cpf')
+  const id = searchParams.get('id')
 
-  if (cpf) {
+  if (id || cpf) {
     const user = await prisma.user.findUnique({
-      where: { cpf },
+      where: id ? { id } : { cpf: cpf! },
       include: {
         treinamentos: true,
         certificacoes: true,

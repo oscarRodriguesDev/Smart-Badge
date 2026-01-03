@@ -23,6 +23,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 /* 
 git add *
-git commit -m 'chore: release version 0.1.1'
+git commit -m 'fix atualização do next'
 git push origin main
 */
