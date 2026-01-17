@@ -58,6 +58,7 @@ model User {
 
   situacaoGeral      String
   motivoDesligamento String?
+  itensViculados     Itens[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -118,4 +119,20 @@ model Ferias {
   status            String
   userId            String  @unique
   user              User    @relation(fields: [userId], references: [id])
+}
+
+model Itens{
+  id          String   @id @default(cuid())
+  nome        String
+  dataEntrada DateTime?
+  tipo        String?
+  Equipamento  String?
+  Marca       String?
+  Modelo      String?
+  numeroSerie String?
+  descricao   String?
+  userId      String
+  status      String?
+  dataSaida   DateTime?
+  user        User    @relation(fields: [userId], references: [id])
 }

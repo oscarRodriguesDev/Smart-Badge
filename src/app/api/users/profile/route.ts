@@ -7,6 +7,7 @@ export async function POST(req: Request) {
 
   const user = await prisma.user.create({
     data: {
+    
       cpf: data.cpf,
       urlPhoto: data.urlPhoto || null,
       email: data.email,
@@ -86,7 +87,8 @@ export async function GET(req: Request) {
         epis: true,
         acidentes: true,
         atestados: true,
-        ferias: true
+        ferias: true,
+        itensViculados: true
       }
     })
 
@@ -104,7 +106,8 @@ export async function GET(req: Request) {
       epis: true,
       acidentes: true,
       atestados: true,
-      ferias: true
+      ferias: true,
+      itensViculados: true
     }
   })
 
